@@ -1,0 +1,49 @@
+@use "color";
+
+button {
+    // SHAPE
+    border: none;
+    padding: 0;
+    height: 3rem;
+
+    // FONT
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+
+    // COLORS
+    color: var(--brand-inactive);
+    background-color: transparent;
+
+    &.is-active {
+        color: var(--brand-color);
+    }
+
+    &:hover {
+        color: var(--brand-color);
+    }
+}
+
+.close-button {
+    position: relative;
+    width: 1rem;
+    text-indent: 5rem;
+    overflow: hidden;
+
+    &::after {
+        display: block;
+        content: "\00D7";
+        
+        position: absolute;
+        top: -0.65rem;
+        right: -0.8rem;
+
+        color: inherit;
+        text-indent: 0;
+        font-size: 3rem;
+        font-weight: 200;
+
+    }
+}

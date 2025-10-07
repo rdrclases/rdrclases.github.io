@@ -1,0 +1,47 @@
+@use "color";
+@use "lengths";
+
+.menu {
+    display: none;
+
+    &.is-visible {
+        display: flex;
+    }
+
+    li + li {
+        margin-inline-start: var(--menu-spacing);
+    }
+}
+
+.main-menu-button {
+    &.is-active {
+        color: var(--brand-color);
+    }
+}
+
+.mode-name {
+    height: 3rem;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+
+    color: var(--brand-color);
+
+    display: none;
+    align-items: center;
+    
+    &.is-visible {
+        display: flex;
+    }
+}
+
+#item-section-modes {
+    display: none;
+    
+    &.is-visible {
+        display: block;
+    }
+}

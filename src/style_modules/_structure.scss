@@ -1,0 +1,35 @@
+@use "color";
+@use 'lengths';
+
+body {
+    margin: 0;
+
+    background-color: var(--brand-gray);
+    color: var(--brand-color);
+}
+
+main {
+    padding-block: 40px;
+}
+
+section {
+    width: var(--max-width);
+    margin-inline: auto;
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.back-drop {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background-color: var(--brand-gray);
+    opacity: 0.9;
+
+    &.is-active {
+        display: block;
+    }
+}

@@ -1,0 +1,12 @@
+@use "lengths";
+@use "color";
+
+nav {
+    width: var(--max-width);
+    margin-inline: auto;
+
+    border-bottom: 3px solid var(--brand-color);
+
+    display: flex;
+    justify-content: space-between;
+}

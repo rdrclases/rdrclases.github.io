@@ -1,0 +1,84 @@
+@use 'color';
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    background-color: transparent;
+    color: var(--white);
+    border: none;
+    padding-inline-start: 20px;
+    min-width: 40px;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+select,
+textarea {
+    border-color: var(--brand-gray);
+    /* blue border when focused */
+    background-color: var(--brand-gray);
+    outline: none;
+    /* remove default focus outline */
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder,
+.form-item span {
+    color: var(--white);
+}
+
+select {
+    appearance: none;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    span {
+        padding-inline-start: 20px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.form-items-container {
+    /*
+        This ruleset targets the container for the .form-item inputs 
+        ID and ITEM.
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+//-------------------------- FORM SPECIAL AREA STRUCTURE
+// This is the display behavior of the block inside the rectangle
+.sales-info {
+    border: 3px solid var(--brand-color);
+    padding-inline: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sales-info .form-item {
+    padding-block-start: 0.1875rem;
+    width: 200px;
+}
+
+#price,
+#sale-price {
+    // max-width: 140px;
+    padding-inline-start: 4px;
+}
+
+#accessories,
+#description {
+    min-height: 219px;
+    resize: none;
+    scrollbar-width: thin;
+}

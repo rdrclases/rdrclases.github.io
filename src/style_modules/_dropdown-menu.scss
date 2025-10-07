@@ -1,0 +1,44 @@
+@use "color";
+
+.dropdown-menu-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    border: 3px solid var(--brand-color);
+    background-color: var(--brand-gray);
+    // top, left, right:
+    // specific properties of the outputs menu
+    // these should go somewhere else
+    // under a different class or id
+    top: 3rem;
+    // bottom: 100rem;
+    right: 0;
+    // left: -10rem;
+    width: min-content;
+    // height is set for extending to the bottom of the viewport
+    // it is also specific of the outputs menu
+    height: calc(100vh - 3rem);
+
+    li {
+        border-block-end: 3px solid var(--brand-inactive);
+    }
+
+    li + li {
+        margin-inline-start: 0;
+    }
+
+    &.is-active {
+        display: flex;
+    }
+}
+
+.dropdown-option button {
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+}

@@ -1,0 +1,64 @@
+@use 'color';
+
+// IMPORTANT:
+// coordenates are written without a comma in the selectors
+// Example:
+// 11 -> refers to cell (1,1)
+// 12-14 -> refers to the cells from (1,1) to (1,4)
+.grid {
+    display: grid;
+    grid-template-rows: 150px repeat(2, 44px) auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    grid-template-areas:
+        "g-i-11 g-i-12 g-i-13 g-i-14"
+        "g-i-21 g-i-22 g-i-22 g-i-24"
+        "g-i-31 g-i-32 g-i-32 g-i-34"
+        "g-i-41 g-i-42 g-i-42 g-i-44";
+
+    .g-i-11 {
+        grid-area: g-i-11;
+    }
+
+    .g-i-21 {
+        grid-area: g-i-21;
+    }
+
+    .g-i-22 {
+        grid-area: g-i-22;
+    }
+
+    .g-i-24 {
+        grid-area: g-i-24;
+    }
+
+    .g-i-31 {
+        grid-area: g-i-31;
+    }
+
+    .g-i-32 {
+        grid-area: g-i-32;
+    }
+
+    .g-i-34 {
+        grid-area: g-i-34;
+    }
+
+    .g-i-41 {
+        grid-area: g-i-41;
+    }
+
+    .g-i-42 {
+        grid-area: g-i-42;
+    }
+
+    .g-i-44 {
+        grid-area: g-i-44;
+    }
+
+    .g-i-12-14 {
+        grid-row: 1;
+        grid-column: 2 / span 3;
+    }
+}
+
