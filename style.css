@@ -320,10 +320,6 @@ template {
   --element-gap: 40px;
 }
 
-@font-face {
-  font-family: "Josefin Sans";
-  src: url("./fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
-}
 :root {
   --normal-letter-spacing: 17%;
   --id-value-letter-spacing: 10%;
@@ -332,7 +328,7 @@ template {
 }
 
 body {
-  font-family: "Josefin Sans";
+  font-family: "Alegreya Sans";
   letter-spacing: var(--normal-letter-spacing);
 }
 

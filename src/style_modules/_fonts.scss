@@ -1,18 +1,75 @@
-@font-face {
-    font-family: 'Josefin Sans';
-    src: url('./fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
-}
+@use "color";
+
+// @font-face {
+//     font-family: 'Sulphure Point';
+//     src: url('../fonts/Sulphur_Point/SulphurPoint-Regular.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Sulphure Point';
+//     src: url('../fonts/Sulphur_Point/SulphurPoint-Light.ttf') format('truetype');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Alegreya Sans';
+//     src: url('../fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Alegreya Sans';
+//     src: url('../fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf') format('truetype');
+//     font-weight: 700;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Alegreya Sans';
+//     src: url('../fonts/Alegreya_Sans/AlegreyaSans-Italic.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: italic;
+// }
+// @font-face {
+//     font-family: 'Alegreya Sans';
+//     src: url('../fonts/Alegreya_Sans/AlegreyaSans-Light.ttf') format('truetype');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Alegreya Sans';
+//     src: url('../fonts/Alegreya_Sans/AlegreyaSans-LightItalic.ttf') format('truetype');
+//     font-weight: 300;
+//     font-style: italic;
+// }
+// @font-face {
+//     font-family: 'Alegreya Sans';
+//     src: url('../fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf') format('truetype');
+//     font-weight: 500;
+//     font-style: normal;
+// }
 
 :root {
-    --normal-letter-spacing: 17%;
-    --id-value-letter-spacing: 10%;
-    --thead-letter-spacing: 10%;
-    --tbody-letter-spacing: 2%;
+    --root-font-size: 18px;
+
+    --banner-main-letter-spacing: 18%;
+    --banner-sub-letter-spacing: 29%;
+    --banner-small-letter-spacing: 8%;
+
+    --article-heading-letter-spacing: 16%;
+    --article-body-letter-spacing: 1%;
+    
+    --menu-heading-letter-spacing: 16%;
+    --menu-body-letter-spacing: 20%;
+
+    --cta-button-letter-spacing: 50%;
+    --contact-info-letter-spacing: 4%;
+
+    font-size: var(--root-font-size);
 }
 
 body {
-    font-family: 'Josefin Sans';
-    letter-spacing: var(--normal-letter-spacing);
+    font-family: 'Alegreya Sans';
 }
 
 header {
@@ -21,36 +78,60 @@ header {
     text-transform: uppercase;
 }
 
-form label {
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-form input,
-form select,
-form span {
-    font-weight: 500;
-    font-size: 24px;
-}
-
-form textarea {
-    font-weight: 300;
-    font-size: 20px;
-}
-
-textarea::placeholder {
-    font-weight: 500;
-    font-size: 24px;
-}
-
 .capitalize {
     text-transform: capitalize;
 }
 
-.big-number {
-    font-weight: bold;
-    font-size: 40px;
-    color: white;
-    letter-spacing: var(--id-value-letter-spacing);
+.highlight {
+    color: var(--main-dark);
 }
+
+.banner {
+    text-align: center;
+}
+
+.banner-main {
+    font-size: 1.77rem;
+    letter-spacing: var(--banner-main-letter-spacing);
+    line-height: 1.6875;
+}
+
+.banner-sub {
+    font-size: 1rem;
+    letter-spacing: var(--banner-sub-letter-spacing);
+    line-height: 1;
+}
+
+.banner-small {
+    font-size: 1rem;
+    letter-spacing: var(--banner-sub-letter-spacing);
+    line-height: 1;
+}
+
+.article-heading {
+    font-size: 1.77rem;
+    letter-spacing: var(--article-heading-letter-spacing);
+    line-height: 1.6875;
+    text-align: center;
+}
+
+.article-body {
+    font-size: 0.88rem;
+    letter-spacing: var(--article-body-letter-spacing);
+    line-height: 1;
+    text-align: justify;
+}
+
+.menu-heading {
+    font-size: 1.77rem;
+    letter-spacing: var(--menu-heading-letter-spacing);
+    line-height: 1.6875;
+    text-align: center;
+}
+
+.menu-body {
+    font-size: 1rem;
+    letter-spacing: var(--menu-body-letter-spacing);
+    line-height: 1;
+}
+
