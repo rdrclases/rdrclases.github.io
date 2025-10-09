@@ -50,10 +50,10 @@
 // }
 
 :root {
-    --root-font-size: 18px;
+    font-size: 18px;
 
     --banner-main-letter-spacing: 18%;
-    --banner-sub-letter-spacing: 29%;
+    --banner-sub-letter-spacing: 28%;
     --banner-small-letter-spacing: 8%;
 
     --article-heading-letter-spacing: 16%;
@@ -64,8 +64,6 @@
 
     --cta-button-letter-spacing: 50%;
     --contact-info-letter-spacing: 4%;
-
-    font-size: var(--root-font-size);
 }
 
 body {
@@ -88,24 +86,44 @@ header {
 
 .banner {
     text-align: center;
+    text-transform: uppercase;
 }
 
 .banner-main {
     font-size: 1.77rem;
     letter-spacing: var(--banner-main-letter-spacing);
-    line-height: 1.6875;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    margin-block-end: 1rem;
+    p {
+        margin: 0;
+    }
+
+    > p + p {
+        margin-block-start: 1rem;
+    }
 }
 
 .banner-sub {
     font-size: 1rem;
     letter-spacing: var(--banner-sub-letter-spacing);
     line-height: 1;
+    margin-block-start: 0;
+    margin-block-end: 3rem;
 }
 
 .banner-small {
+    margin-block-start: 0;
+    margin-block-end: 3rem;
+    font-family: "alegreya sans sc";
+    text-transform: lowercase;
     font-size: 1rem;
-    letter-spacing: var(--banner-sub-letter-spacing);
+    letter-spacing: var(--banner-small-letter-spacing);
     line-height: 1;
+    p {
+        margin: 0;
+    }
 }
 
 .article-heading {

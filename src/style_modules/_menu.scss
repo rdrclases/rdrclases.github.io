@@ -1,47 +1,40 @@
 @use "color";
 @use "lengths";
 
-.menu {
+ul.menu {
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--white);
+    list-style: none;
+
+    position: absolute;
+    inset: 0;
+
+    border: 1px solid red;
     display: none;
-
-    &.is-visible {
-        display: flex;
-    }
-
-    li + li {
-        margin-inline-start: var(--menu-spacing);
-    }
 }
 
-.main-menu-button {
-    &.is-active {
-        color: var(--brand-color);
-    }
-}
+.menu-option {
 
-.mode-name {
-    height: 3rem;
-
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    text-transform: inherit;
-    letter-spacing: inherit;
-
-    color: var(--brand-color);
-
-    display: none;
-    align-items: center;
     
-    &.is-visible {
-        display: flex;
-    }
-}
+    button {
+        position: relative;
 
-#item-section-modes {
-    display: none;
+        .icon {
+            width: 0.5rem;
     
-    &.is-visible {
-        display: block;
+            position: absolute;
+            bottom: 1.25rem;
+        }
+    
+        .text {
+            padding-inline-start: 1rem;
+
+            letter-spacing: var(--menu-body-letter-spacing);
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 3;
+        }
     }
+
 }

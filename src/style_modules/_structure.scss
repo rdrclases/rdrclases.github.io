@@ -4,32 +4,42 @@
 body {
     margin: 0;
 
-    background-color: var(--brand-gray);
-    color: var(--brand-color);
+    background-color: var(--white);
+}
+
+header, main {
+    // border: 1px solid red;
+    padding: 1rem;
+}
+
+header {
+    background-color: var(--main-light);
+    height: 16rem;
+    padding-block: 1rem;
+
+}
+
+.main-logo {
+    padding-block: 1rem;
+    .text {
+        display: inline-block;
+        width: 1rem;
+        height: 0;
+        text-indent: 100rem;
+        overflow: hidden;
+    }
 }
 
 main {
-    padding-block: 40px;
+    padding-block-start: 2rem;
 }
 
-section {
-    width: var(--max-width);
-    margin-inline: auto;
-    display: none;
-
-    &.is-active {
-        display: block;
+.article {
+    & > h2 {
+        padding-block-start: 1rem;
+    }
+    & > * {
+        padding-block-end: 1rem;
     }
 }
 
-.back-drop {
-    display: none;
-    position: absolute;
-    inset: 0;
-    background-color: var(--brand-gray);
-    opacity: 0.9;
-
-    &.is-active {
-        display: block;
-    }
-}

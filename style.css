@@ -312,24 +312,32 @@ template {
 :root {
   --max-width: 1400px;
   --menu-spacing: 2.5rem;
-  --label-height: 11px;
-  --inside-gap: 11px;
-  --content-height: auto;
-  --id-height: 28px;
-  --id-gap: 51px;
-  --element-gap: 40px;
 }
 
 :root {
-  --normal-letter-spacing: 17%;
-  --id-value-letter-spacing: 10%;
-  --thead-letter-spacing: 10%;
-  --tbody-letter-spacing: 2%;
+  --main-dark: #998329;
+  --main-color: #b29830;
+  --main-light: #fffae5;
+  --main-gray: #403e39;
+  --white: #fff;
+  --black: #000;
+}
+
+:root {
+  font-size: 18px;
+  --banner-main-letter-spacing: 18%;
+  --banner-sub-letter-spacing: 28%;
+  --banner-small-letter-spacing: 8%;
+  --article-heading-letter-spacing: 16%;
+  --article-body-letter-spacing: 1%;
+  --menu-heading-letter-spacing: 16%;
+  --menu-body-letter-spacing: 20%;
+  --cta-button-letter-spacing: 50%;
+  --contact-info-letter-spacing: 4%;
 }
 
 body {
   font-family: "Alegreya Sans";
-  letter-spacing: var(--normal-letter-spacing);
 }
 
 header {
@@ -338,43 +346,80 @@ header {
   text-transform: uppercase;
 }
 
-form label {
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-form input,
-form select,
-form span {
-  font-weight: 500;
-  font-size: 24px;
-}
-
-form textarea {
-  font-weight: 300;
-  font-size: 20px;
-}
-
-textarea::-moz-placeholder {
-  font-weight: 500;
-  font-size: 24px;
-}
-
-textarea::placeholder {
-  font-weight: 500;
-  font-size: 24px;
-}
-
 .capitalize {
   text-transform: capitalize;
 }
 
-.big-number {
-  font-weight: bold;
-  font-size: 40px;
-  color: white;
-  letter-spacing: var(--id-value-letter-spacing);
+.highlight {
+  color: var(--main-dark);
+}
+
+.banner {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.banner-main {
+  font-size: 1.77rem;
+  letter-spacing: var(--banner-main-letter-spacing);
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  margin-block-end: 1rem;
+}
+.banner-main p {
+  margin: 0;
+}
+.banner-main > p + p {
+  margin-block-start: 1rem;
+}
+
+.banner-sub {
+  font-size: 1rem;
+  letter-spacing: var(--banner-sub-letter-spacing);
+  line-height: 1;
+  margin-block-start: 0;
+  margin-block-end: 3rem;
+}
+
+.banner-small {
+  margin-block-start: 0;
+  margin-block-end: 3rem;
+  font-family: "alegreya sans sc";
+  text-transform: lowercase;
+  font-size: 1rem;
+  letter-spacing: var(--banner-small-letter-spacing);
+  line-height: 1;
+}
+.banner-small p {
+  margin: 0;
+}
+
+.article-heading {
+  font-size: 1.77rem;
+  letter-spacing: var(--article-heading-letter-spacing);
+  line-height: 1.6875;
+  text-align: center;
+}
+
+.article-body {
+  font-size: 0.88rem;
+  letter-spacing: var(--article-body-letter-spacing);
+  line-height: 1;
+  text-align: justify;
+}
+
+.menu-heading {
+  font-size: 1.77rem;
+  letter-spacing: var(--menu-heading-letter-spacing);
+  line-height: 1.6875;
+  text-align: center;
+}
+
+.menu-body {
+  font-size: 1rem;
+  letter-spacing: var(--menu-body-letter-spacing);
+  line-height: 1;
 }
 
 :root {
@@ -387,12 +432,6 @@ textarea::placeholder {
   box-sizing: inherit;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 a {
   text-decoration: none;
   text-transform: uppercase;
@@ -402,51 +441,47 @@ label {
   display: block;
 }
 
-:root {
-  --brand-color: #EDE2AB;
-  --brand-inactive: #A19974;
-  --brand-gray: #1A1A1A;
-  --white: #fff;
-  --tbody-bgc: #333333;
-  --thead-bgc: #262626;
-  --row-highlight: #807a5c;
-  --table-lines: #7c7c7c;
-}
-
 body {
   margin: 0;
-  background-color: var(--brand-gray);
-  color: var(--brand-color);
+  background-color: var(--white);
+}
+
+header, main {
+  padding: 1rem;
+}
+
+header {
+  background-color: var(--main-light);
+  height: 16rem;
+  padding-block: 1rem;
+}
+
+.main-logo {
+  padding-block: 1rem;
+}
+.main-logo .text {
+  display: inline-block;
+  width: 1rem;
+  height: 0;
+  text-indent: 100rem;
+  overflow: hidden;
 }
 
 main {
-  padding-block: 40px;
+  padding-block-start: 2rem;
 }
 
-section {
-  width: var(--max-width);
-  margin-inline: auto;
-  display: none;
+.article > h2 {
+  padding-block-start: 1rem;
 }
-section.is-active {
-  display: block;
-}
-
-.back-drop {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background-color: var(--brand-gray);
-  opacity: 0.9;
-}
-.back-drop.is-active {
-  display: block;
+.article > * {
+  padding-block-end: 1rem;
 }
 
 button {
   border: none;
   padding: 0;
-  height: 3rem;
+  cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -458,8 +493,16 @@ button {
 button.is-active {
   color: var(--brand-color);
 }
-button:hover {
-  color: var(--brand-color);
+.icon-button {
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+}
+.icon-button .icon {
+  height: 0.61rem;
+}
+.icon-button .text {
+  text-indent: 100rem;
 }
 
 .close-button {
@@ -478,6 +521,16 @@ button:hover {
   text-indent: 0;
   font-size: 3rem;
   font-weight: 200;
+}
+
+.cta-button {
+  width: 100%;
+  padding-block: 1rem;
+  border: 4px solid var(--main-color);
+  color: var(--main-color);
+  font-size: 1rem;
+  letter-spacing: var(--cta-button-letter-spacing);
+  font-weight: 500;
 }
 
 .grid {
@@ -530,40 +583,31 @@ nav {
   justify-content: space-between;
 }
 
-.menu {
+ul.menu {
+  margin: 0;
+  padding: 1rem;
+  background-color: var(--white);
+  list-style: none;
+  position: absolute;
+  inset: 0;
+  border: 1px solid red;
   display: none;
 }
-.menu.is-visible {
-  display: flex;
-}
-.menu li + li {
-  margin-inline-start: var(--menu-spacing);
-}
 
-.main-menu-button.is-active {
-  color: var(--brand-color);
+.menu-option button {
+  position: relative;
 }
-
-.mode-name {
-  height: 3rem;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  text-transform: inherit;
-  letter-spacing: inherit;
-  color: var(--brand-color);
-  display: none;
-  align-items: center;
+.menu-option button .icon {
+  width: 0.5rem;
+  position: absolute;
+  bottom: 1.25rem;
 }
-.mode-name.is-visible {
-  display: flex;
-}
-
-#item-section-modes {
-  display: none;
-}
-#item-section-modes.is-visible {
-  display: block;
+.menu-option button .text {
+  padding-inline-start: 1rem;
+  letter-spacing: var(--menu-body-letter-spacing);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 3;
 }
 
 .dropdown-menu-container {
