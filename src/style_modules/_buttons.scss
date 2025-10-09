@@ -18,7 +18,7 @@ button {
     background-color: transparent;
 
     &.is-active {
-        color: var(--brand-color);
+        // color: var(--brand-color);
     }
 
     &:hover {
@@ -27,12 +27,15 @@ button {
 }
 
 .icon-button {
+    display: flex;
+    align-items: center;
     width: 1rem;
     height: 1rem;
     overflow: hidden;
 
     .icon {
-        height: 0.61rem;
+        height: auto;
+        width: 100%;
     }
 
     .text {
@@ -71,4 +74,5 @@ button {
     font-size: 1rem;
     letter-spacing: var(--cta-button-letter-spacing);
     font-weight: 500;
+    text-transform: uppercase;
 }
