@@ -50,11 +50,11 @@
 // }
 
 :root {
-    font-size: 18px;
+    font-size: calc(8px + 3vw);
 
     --banner-main-letter-spacing: 18%;
     --banner-sub-letter-spacing: 28%;
-    --banner-small-letter-spacing: 8%;
+    --banner-small-letter-spacing: 7%;
 
     --article-heading-letter-spacing: 16%;
     --article-body-letter-spacing: 1%;

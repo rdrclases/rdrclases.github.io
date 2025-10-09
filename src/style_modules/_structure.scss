@@ -1,26 +1,48 @@
 @use "color";
 @use 'lengths';
 
+:root {
+    --mobile-width: 290px;
+}
+
 body {
     margin: 0;
-
     background-color: var(--white);
 }
 
 header, main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     // border: 1px solid red;
-    padding: 1rem;
+    // padding: 1rem;
+    padding-inline: 1rem;
+    overflow: hidden;
+}
+
+header > *,
+main > * {
+    // width: var(--mobile-width);
+    margin-inline: auto;
 }
 
 header {
     background-color: var(--main-light);
-    height: 16rem;
-    padding-block: 1rem;
+    // height: 16rem;
+    padding-block-start: 1rem;
+    padding-block-end: 2rem;
 
+    padding-inline: 1rem;
+}
+
+.menu-container {
+    margin: 0;
 }
 
 .main-logo {
-    padding-block: 1rem;
+    // display: flex;
+    // justify-content: center;
+    padding-block-start: 1rem;
     .text {
         display: inline-block;
         width: 1rem;
@@ -28,10 +50,13 @@ header {
         text-indent: 100rem;
         overflow: hidden;
     }
+    .image {
+        width: calc(100%);
+    }
 }
 
 main {
-    padding-block-start: 2rem;
+    padding-block: 2rem;
 }
 
 .article {

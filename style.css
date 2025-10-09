@@ -324,10 +324,10 @@ template {
 }
 
 :root {
-  font-size: 18px;
+  font-size: calc(8px + 3vw);
   --banner-main-letter-spacing: 18%;
   --banner-sub-letter-spacing: 28%;
-  --banner-small-letter-spacing: 8%;
+  --banner-small-letter-spacing: 7%;
   --article-heading-letter-spacing: 16%;
   --article-body-letter-spacing: 1%;
   --menu-heading-letter-spacing: 16%;
@@ -441,23 +441,41 @@ label {
   display: block;
 }
 
+:root {
+  --mobile-width: 290px;
+}
+
 body {
   margin: 0;
   background-color: var(--white);
 }
 
 header, main {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 1rem;
+  overflow: hidden;
+}
+
+header > *,
+main > * {
+  margin-inline: auto;
 }
 
 header {
   background-color: var(--main-light);
-  height: 16rem;
-  padding-block: 1rem;
+  padding-block-start: 1rem;
+  padding-block-end: 2rem;
+  padding-inline: 1rem;
+}
+
+.menu-container {
+  margin: 0;
 }
 
 .main-logo {
-  padding-block: 1rem;
+  padding-block-start: 1rem;
 }
 .main-logo .text {
   display: inline-block;
@@ -466,9 +484,12 @@ header {
   text-indent: 100rem;
   overflow: hidden;
 }
+.main-logo .image {
+  width: 100%;
+}
 
 main {
-  padding-block-start: 2rem;
+  padding-block: 2rem;
 }
 
 .article > h2 {
