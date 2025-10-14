@@ -6,27 +6,20 @@ ul.menu {
     padding: 1rem;
     background-color: var(--white);
     list-style: none;
-
-    position: absolute;
-    inset: 0;
-
-    border: 1px solid red;
-    display: none;
 }
 
 .menu-option {
-
     
     button {
         position: relative;
 
         .icon {
             width: 0.5rem;
-    
+
             position: absolute;
-            bottom: 1.25rem;
+            bottom: 1.26rem;
         }
-    
+
         .text {
             padding-inline-start: 1rem;
 

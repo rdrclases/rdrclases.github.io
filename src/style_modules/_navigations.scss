@@ -1,12 +1,44 @@
 @use "lengths";
 @use "color";
 
-nav {
-    width: var(--max-width);
-    margin-inline: auto;
-
-    border-bottom: 3px solid var(--brand-color);
-
-    display: flex;
-    justify-content: space-between;
+.main-header {
+    background-color: var(--main-light);
+    &.menu-is-open {
+        background-color: white;
+    }
 }
+
+.open-menu-button {
+    display: none;
+    &.is-displayed {
+        display: block;
+    }
+}
+
+.close-menu-button {
+    display: none;
+    &.is-displayed {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+.small-logo {
+    display: none;
+    &.is-displayed {
+        display: block;
+    }
+}
+
+.mobile-nav-body {
+    position: absolute;
+    inset: 0;
+    inset-block-start: 3rem;
+
+    transform: translateX(-100vw);
+
+    &.is-open {
+        transform: translateX(0);
+    }
+}
+

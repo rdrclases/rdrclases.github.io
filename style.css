@@ -457,11 +457,11 @@ body {
   margin: 0;
   background-color: var(--white);
 }
+body.menu-is-open {
+  overflow: hidden;
+}
 
 header, main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding-inline: 1rem;
   overflow: hidden;
 }
@@ -472,15 +472,33 @@ main > * {
 }
 
 header {
-  background-color: var(--main-light);
   padding-block-start: 1rem;
   padding-block-end: 2rem;
   padding-inline: 1rem;
 }
 
-.menu-container {
-  margin: 0;
-  width: 100%;
+.header-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: var(--main-gray);
+  opacity: 0.9;
+}
+.header-backdrop.is-displayed {
+  display: block;
+}
+
+.mobile-nav.menu-is-open {
+  height: calc(100vh + 3rem);
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+.mobile-nav-header .small-logo {
+  height: 1rem;
 }
 
 .main-logo {
@@ -633,12 +651,43 @@ button {
   grid-column: 2/span 3;
 }
 
-nav {
-  width: var(--max-width);
-  margin-inline: auto;
-  border-bottom: 3px solid var(--brand-color);
-  display: flex;
-  justify-content: space-between;
+.main-header {
+  background-color: var(--main-light);
+}
+.main-header.menu-is-open {
+  background-color: white;
+}
+
+.open-menu-button {
+  display: none;
+}
+.open-menu-button.is-displayed {
+  display: block;
+}
+
+.close-menu-button {
+  display: none;
+}
+.close-menu-button.is-displayed {
+  display: block;
+  margin-left: auto;
+}
+
+.small-logo {
+  display: none;
+}
+.small-logo.is-displayed {
+  display: block;
+}
+
+.mobile-nav-body {
+  position: absolute;
+  inset: 0;
+  inset-block-start: 3rem;
+  transform: translateX(-100vw);
+}
+.mobile-nav-body.is-open {
+  transform: translateX(0);
 }
 
 ul.menu {
@@ -646,10 +695,6 @@ ul.menu {
   padding: 1rem;
   background-color: var(--white);
   list-style: none;
-  position: absolute;
-  inset: 0;
-  border: 1px solid red;
-  display: none;
 }
 
 .menu-option button {
@@ -658,7 +703,7 @@ ul.menu {
 .menu-option button .icon {
   width: 0.5rem;
   position: absolute;
-  bottom: 1.25rem;
+  bottom: 1.26rem;
 }
 .menu-option button .text {
   padding-inline-start: 1rem;

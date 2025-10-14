@@ -8,14 +8,12 @@
 body {
     margin: 0;
     background-color: var(--white);
+    &.menu-is-open {
+        overflow: hidden;
+    }
 }
 
 header, main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // border: 1px solid red;
-    // padding: 1rem;
     padding-inline: 1rem;
     overflow: hidden;
 }
@@ -27,17 +25,36 @@ main > * {
 }
 
 header {
-    background-color: var(--main-light);
-    // height: 16rem;
     padding-block-start: 1rem;
     padding-block-end: 2rem;
-
+    
     padding-inline: 1rem;
 }
 
-.menu-container {
-    margin: 0;
-    width: 100%;
+.header-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: var(--main-gray);
+    opacity: 0.9;
+    &.is-displayed {
+        display: block;
+    }
+}
+
+.mobile-nav {
+    &.menu-is-open {
+        height: calc(100vh + 3rem);
+    }
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    .small-logo {
+        height: 1rem;
+    }
 }
 
 .main-logo {
