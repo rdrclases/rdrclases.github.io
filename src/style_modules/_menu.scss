@@ -9,24 +9,27 @@ ul.menu {
 }
 
 .menu-option {
+    position: relative;
     
+    .icon {
+        position: absolute;
+        inset-block-start: 1.25rem;
+        width: 0.5rem;
+    }
+
     button {
-        position: relative;
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
 
-        .icon {
-            width: 0.5rem;
+        padding-inline-start: 1rem;
 
-            position: absolute;
-            bottom: 1.26rem;
-        }
+        letter-spacing: var(--menu-body-letter-spacing);
+        font-size: 1rem;
+        line-height: 3;
 
-        .text {
-            padding-inline-start: 1rem;
-
-            letter-spacing: var(--menu-body-letter-spacing);
-            font-weight: 400;
-            font-size: 1rem;
-            line-height: 3;
+        &.is-active {
+            font-weight: bold;
         }
     }
 

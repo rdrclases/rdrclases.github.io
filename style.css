@@ -473,20 +473,11 @@ main > * {
 
 header {
   padding-block-start: 1rem;
-  padding-block-end: 2rem;
+  padding-block-end: 1rem;
   padding-inline: 1rem;
 }
-
-.header-backdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background-color: var(--main-gray);
-  opacity: 0.9;
-}
-.header-backdrop.is-displayed {
-  display: block;
+header.extra-padded {
+  padding-block-end: 2rem;
 }
 
 .mobile-nav.menu-is-open {
@@ -514,6 +505,9 @@ header {
 .main-logo .image {
   width: 100%;
 }
+.main-logo.is-hidden {
+  display: none;
+}
 
 main {
   padding-block: 2rem;
@@ -533,24 +527,11 @@ main {
   padding: 0;
 }
 
-#home {
+article {
   display: none;
 }
-
-#about {
-  display: none;
-}
-
-#method {
-  display: none;
-}
-
-#lessons {
-  display: none;
-}
-
-#pricing {
-  display: none;
+article.is-visible {
+  display: block;
 }
 
 button {
@@ -598,7 +579,7 @@ button {
   font-weight: 200;
 }
 
-.cta-button {
+.cta-contact-button {
   width: 100%;
   padding-block: 1rem;
   border: 4px solid var(--main-color);
@@ -697,20 +678,25 @@ ul.menu {
   list-style: none;
 }
 
-.menu-option button {
+.menu-option {
   position: relative;
 }
-.menu-option button .icon {
-  width: 0.5rem;
+.menu-option .icon {
   position: absolute;
-  bottom: 1.26rem;
+  inset-block-start: 1.25rem;
+  width: 0.5rem;
 }
-.menu-option button .text {
+.menu-option button {
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
   padding-inline-start: 1rem;
   letter-spacing: var(--menu-body-letter-spacing);
-  font-weight: 400;
   font-size: 1rem;
   line-height: 3;
+}
+.menu-option button.is-active {
+  font-weight: bold;
 }
 
 .dropdown-menu-container {

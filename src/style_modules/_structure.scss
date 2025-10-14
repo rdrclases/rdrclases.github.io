@@ -26,20 +26,12 @@ main > * {
 
 header {
     padding-block-start: 1rem;
-    padding-block-end: 2rem;
+    padding-block-end: 1rem;
     
     padding-inline: 1rem;
-}
-
-.header-backdrop {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background-color: var(--main-gray);
-    opacity: 0.9;
-    &.is-displayed {
-        display: block;
+    
+    &.extra-padded {
+        padding-block-end: 2rem;
     }
 }
 
@@ -58,8 +50,6 @@ header {
 }
 
 .main-logo {
-    // display: flex;
-    // justify-content: center;
     padding-block-start: 1rem;
     .text {
         display: inline-block;
@@ -70,6 +60,9 @@ header {
     }
     .image {
         width: calc(100%);
+    }
+    &.is-hidden {
+        display: none;
     }
 }
 
@@ -103,22 +96,39 @@ main {
 
 
 // ISOLATED SECTIONS BY ID
-#home {
-    display: none;
-}
+// #home {
+//     display: none;
 
-#about {
-    display: none;
-}
+// }
 
-#method {
-    display: none;
-}
+// #about {
+//     display: none;
 
-#lessons {
-    display: none;
-}
+// }
 
-#pricing {
+// #method {
+//     display: none;
+
+// }
+
+// #lessons {
+//     display: none;
+
+// }
+
+// #pricing {
+//     display: none;
+
+// }
+
+// #contact {
+//     display: none;
+
+// }
+
+article {
     display: none;
+    &.is-visible {
+        display: block;
+    }
 }
