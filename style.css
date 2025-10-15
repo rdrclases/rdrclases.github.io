@@ -530,6 +530,7 @@ main {
   width: 100%;
 }
 .article .article-body {
+  margin-block-end: 2rem;
   padding: 0;
 }
 
