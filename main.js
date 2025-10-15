@@ -43,7 +43,7 @@ const articles = document.getElementsByTagName('article');
 const ctaContactButtons = document.getElementsByClassName("cta-contact-button");
 
 // FUNCTIONS
-function toggleMenu () {
+function toggleMenu() {
     body.classList.toggle("menu-is-open");
     mainHeader.classList.toggle("menu-is-open");
     mobileNav.classList.toggle("menu-is-open");
@@ -62,7 +62,7 @@ closeMenuButton.addEventListener('click', toggleMenu);
 
 // highlighting the buttons texts when clicked (deselecting any previously selected)
 for (const button of navButtons) {
-    button.addEventListener('click', (event)=>{
+    button.addEventListener('click', (event) => {
         for (const button of navButtons) {
             if (button.classList.contains('is-active')) {
                 button.classList.toggle('is-active');
@@ -72,7 +72,7 @@ for (const button of navButtons) {
     });
 }
 
-homeButton.addEventListener('click', ()=>{
+homeButton.addEventListener('click', () => {
     for (const article of articles) {
         if (article.classList.contains('is-visible')) {
             article.classList.toggle('is-visible');
@@ -80,14 +80,14 @@ homeButton.addEventListener('click', ()=>{
     }
     home.classList.toggle('is-visible');
 
-    if(bannerLogo.classList.contains('is-hidden')) {
+    if (bannerLogo.classList.contains('is-hidden')) {
         bannerLogo.classList.toggle('is-hidden');
     }
 
     mainHeader.classList.add('extra-padded');
 });
 
-aboutButton.addEventListener('click', ()=>{
+aboutButton.addEventListener('click', () => {
     for (const article of articles) {
         if (article.classList.contains('is-visible')) {
             article.classList.toggle('is-visible');
@@ -98,7 +98,7 @@ aboutButton.addEventListener('click', ()=>{
     mainHeader.classList.remove('extra-padded');
 });
 
-methodButton.addEventListener('click', ()=>{
+methodButton.addEventListener('click', () => {
     for (const article of articles) {
         if (article.classList.contains('is-visible')) {
             article.classList.toggle('is-visible');
@@ -108,7 +108,7 @@ methodButton.addEventListener('click', ()=>{
     bannerLogo.classList.add('is-hidden');
 });
 
-lessonsButton.addEventListener('click', ()=>{
+lessonsButton.addEventListener('click', () => {
     for (const article of articles) {
         if (article.classList.contains('is-visible')) {
             article.classList.toggle('is-visible');
@@ -118,7 +118,7 @@ lessonsButton.addEventListener('click', ()=>{
     bannerLogo.classList.add('is-hidden');
 });
 
-pricingButton.addEventListener('click', ()=>{
+pricingButton.addEventListener('click', () => {
     for (const article of articles) {
         if (article.classList.contains('is-visible')) {
             article.classList.toggle('is-visible');
@@ -128,7 +128,7 @@ pricingButton.addEventListener('click', ()=>{
     bannerLogo.classList.add('is-hidden');
 });
 
-contactButton.addEventListener('click', ()=>{
+contactButton.addEventListener('click', () => {
     for (const article of articles) {
         if (article.classList.contains('is-visible')) {
             article.classList.toggle('is-visible');
@@ -140,22 +140,26 @@ contactButton.addEventListener('click', ()=>{
 });
 
 for (const ctaContactButton of ctaContactButtons) {
-    ctaContactButton.addEventListener('click', ()=>{
+    ctaContactButton.addEventListener('click', () => {
         for (const article of articles) {
-        if (article.classList.contains('is-visible')) {
-            article.classList.toggle('is-visible');
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
         }
-    }
-    contact.classList.toggle('is-visible');
-    bannerLogo.classList.add('is-hidden');
-    mainHeader.classList.remove('extra-padded');
+        for (const navButton of navButtons) {
+            navButton.classList.remove('is-active');
+        }
+        contactButton.classList.toggle('is-active');
+        contact.classList.toggle('is-visible');
+        bannerLogo.classList.add('is-hidden');
+        mainHeader.classList.remove('extra-padded');
     });
 }
 
 for (const button of allButtons) {
     if (!button.classList.contains('open-menu-button') && !button.classList.contains('close-menu-button')) {
-        button.addEventListener('click', ()=>{
-            window.scrollTo(0,0);
+        button.addEventListener('click', () => {
+            window.scrollTo(0, 0);
         });
     }
 }

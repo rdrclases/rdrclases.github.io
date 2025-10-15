@@ -138,3 +138,30 @@ article {
         display: block;
     }
 }
+
+.info-card-container {
+    margin-block-start: 2rem;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+
+    height: 3rem;
+    border: 2px solid var(--main-color);
+    padding-inline: 1em;
+
+    margin-block-end: 1rem;
+}
+
+.info-card-icon {
+    height: 1rem;
+}
+
+.info-card-text{
+    margin-inline-start: 1rem;
+}
+
+.copy-email-icon {
+    margin-inline-start: auto;
+}
