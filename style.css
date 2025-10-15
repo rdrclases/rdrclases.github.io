@@ -471,13 +471,12 @@ main > * {
   margin-inline: auto;
 }
 
-header {
+.main-header {
   padding-block-start: 1rem;
   padding-block-end: 1rem;
   padding-inline: 1rem;
-}
-header.extra-padded {
-  padding-block-end: 2rem;
+  position: fixed;
+  inset-inline: 0;
 }
 
 .mobile-nav.menu-is-open {
@@ -487,13 +486,17 @@ header.extra-padded {
 .mobile-nav-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .mobile-nav-header .small-logo {
   height: 1rem;
 }
 
 .main-logo {
-  padding-block-start: 1rem;
+  background-color: var(--main-light);
+  padding-block-start: 3rem;
+  padding-block-end: 2rem;
+  padding-inline: 1rem;
 }
 .main-logo .text {
   display: inline-block;
@@ -513,6 +516,9 @@ main {
   padding-block: 2rem;
 }
 
+.article {
+  padding-block-start: 2rem;
+}
 .article > * {
   padding-block-end: 1rem;
 }

@@ -24,15 +24,15 @@ main > * {
     margin-inline: auto;
 }
 
-header {
+.main-header {
     padding-block-start: 1rem;
     padding-block-end: 1rem;
     
     padding-inline: 1rem;
-    
-    &.extra-padded {
-        padding-block-end: 2rem;
-    }
+
+    position: fixed;
+    inset-inline: 0;
+
 }
 
 .mobile-nav {
@@ -44,13 +44,17 @@ header {
 .mobile-nav-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .small-logo {
         height: 1rem;
     }
 }
 
 .main-logo {
-    padding-block-start: 1rem;
+    background-color: var(--main-light);
+    padding-block-start: 3rem;
+    padding-block-end: 2rem;
+    padding-inline: 1rem;
     .text {
         display: inline-block;
         width: 1rem;
@@ -71,6 +75,7 @@ main {
 }
 
 .article {
+    padding-block-start: 2rem;
     & > h2 {
         // padding-block-start: 1rem;
     }

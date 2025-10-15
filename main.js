@@ -10,6 +10,8 @@ const mobileNavBody = document.getElementById("mobile-nav-body");
 const smallLogo = document.getElementById("small-logo");
 const bannerLogo = document.getElementById("banner-logo");
 
+const allButtons = document.getElementsByTagName("button");
+
 // MENU BUTTONS by ID
 const openMenuButton = document.getElementById("open-menu-button");
 const closeMenuButton = document.getElementById("close-menu-button");
@@ -64,7 +66,6 @@ for (const button of navButtons) {
         for (const button of navButtons) {
             if (button.classList.contains('is-active')) {
                 button.classList.toggle('is-active');
-                console.log(button.previousSibling);
             }
         }
         event.target.classList.toggle('is-active');
@@ -149,4 +150,12 @@ for (const ctaContactButton of ctaContactButtons) {
     bannerLogo.classList.add('is-hidden');
     mainHeader.classList.remove('extra-padded');
     });
+}
+
+for (const button of allButtons) {
+    if (!button.classList.contains('open-menu-button') && !button.classList.contains('close-menu-button')) {
+        button.addEventListener('click', ()=>{
+            window.scrollTo(0,0);
+        });
+    }
 }
