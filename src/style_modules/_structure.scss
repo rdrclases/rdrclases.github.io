@@ -8,12 +8,14 @@
 body {
     margin: 0;
     background-color: var(--white);
+
     &.menu-is-open {
         overflow: hidden;
     }
 }
 
-header, main {
+header,
+main {
     padding-inline: 1rem;
     overflow: hidden;
 }
@@ -27,7 +29,7 @@ main > * {
 .main-header {
     padding-block-start: 1rem;
     padding-block-end: 1rem;
-    
+
     padding-inline: 1rem;
 
     position: fixed;
@@ -45,6 +47,7 @@ main > * {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .small-logo {
         height: 1rem;
     }
@@ -55,6 +58,7 @@ main > * {
     padding-block-start: 3rem;
     padding-block-end: 2rem;
     padding-inline: 1rem;
+
     .text {
         display: inline-block;
         width: 1rem;
@@ -62,9 +66,11 @@ main > * {
         text-indent: 100rem;
         overflow: hidden;
     }
+
     .image {
         width: calc(100%);
     }
+
     &.is-hidden {
         display: none;
     }
@@ -76,9 +82,11 @@ main {
 
 .article {
     padding-block-start: 2rem;
+
     & > h2 {
         // padding-block-start: 1rem;
     }
+
     & > * {
         padding-block-end: 1rem;
     }
@@ -134,6 +142,7 @@ main {
 
 article {
     display: none;
+
     &.is-visible {
         display: block;
     }
@@ -148,6 +157,7 @@ article {
     align-items: center;
 
     height: 3rem;
+    width: 100%;
     border: 2px solid var(--main-color);
     padding-inline: 1em;
 
@@ -158,10 +168,42 @@ article {
     height: 1rem;
 }
 
-.info-card-text{
+.info-card-text {
     margin-inline-start: 1rem;
 }
 
 .copy-email-icon {
     margin-inline-start: auto;
+}
+
+.alert-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    inset: 0;
+    background-color: var(--main-gray);
+    color: var(--white);
+    opacity: 0.9;
+
+    .alert-message {
+        display: block;
+        width: 100%;
+        background-color: var(--main-color);
+        padding: 1rem;
+        text-align: center;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 8%;
+    }
+}
+
+.alert-container {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+.alert-container.visible {
+  opacity: 1;
 }

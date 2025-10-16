@@ -27,6 +27,11 @@ const contactButton = document.getElementById("contact-button");
 // NAVIGATION BUTTONS by CLASSNAME
 const navButtons = document.getElementsByClassName('menu-button');
 
+// CONTACT INFO BUTTONS
+const copyEmailButton = document.getElementById("copy-email-button");
+const openTelegramButton = document.getElementById("open-telegram-button");
+const openWhatsappButton = document.getElementById("open-whatsapp-button");
+
 // ARTICLES by ID
 const home = document.getElementById('home');
 const about = document.getElementById('about');
@@ -163,3 +168,48 @@ for (const button of allButtons) {
         });
     }
 }
+
+copyEmailButton.addEventListener('click', () => {
+    const value = 'rdrclases@gmail.com';
+    navigator.clipboard.writeText(value)
+        .then(() => {
+            // const successMessage = 'Email copiado';
+            // const alert = document.createElement('div');
+            // alert.classList.add('alert-container');
+            // alert.innerHTML = `<span class="alert-message success">${successMessage}</span>`;
+            // alert.style.opacity = '0';
+            // alert.style.transition = 'opacity 0.8s ease-in';
+            // body.appendChild(alert);
+            // requestAnimationFrame(() => alert.classList.add('visible'));
+            const successMessage = 'Email copiado';
+            const alert = document.createElement('div');
+            alert.classList.add('alert-container');
+            alert.innerHTML = `<span class="alert-message success">${successMessage}</span>`;
+
+            // Initial state
+            alert.style.opacity = '0';
+            alert.style.transition = 'opacity 0.4s ease-in-out';
+            body.appendChild(alert);
+
+            // --- Force browser to render initial state first ---
+            requestAnimationFrame(() => {
+                // This ensures the first frame (opacity 0) is painted
+                requestAnimationFrame(() => {
+                    alert.style.opacity = '1'; // Fade in
+                });
+            });
+
+            // --- Wait 0.4s fade-in + 0.8s visible = 1.2s total ---
+            setTimeout(() => {
+                alert.style.opacity = '0'; // Fade out
+                setTimeout(() => {
+                    alert.remove(); // Remove after fade-out completes (0.4s)
+                }, 400);
+            }, 1200);
+        })
+        .catch(err => console.error('Failed to copy the email to the clipboard', err));
+});
+
+openTelegramButton.addEventListener('click', () => {
+    window.open('https://t.me/rdrclases', '_blank');
+});
