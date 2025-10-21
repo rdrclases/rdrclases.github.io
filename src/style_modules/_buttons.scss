@@ -8,13 +8,13 @@ button {
 
     // FONT
     font-family: inherit;
-    font-size: inherit;
+    font-size: 1rem;
     font-weight: inherit;
     text-transform: inherit;
     letter-spacing: inherit;
 
     // COLORS
-    color: var(--brand-inactive);
+    color: var(--main-dark);
     background-color: transparent;
 
     &.is-active {
@@ -73,6 +73,6 @@ button {
     color: var(--main-color);
     font-size: 1rem;
     letter-spacing: var(--cta-button-letter-spacing);
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
 }
