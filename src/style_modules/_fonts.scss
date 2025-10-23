@@ -52,18 +52,18 @@
 :root {
     font-size: calc(8px + 3vw);
 
-    --banner-main-letter-spacing: 18%;
+    --banner-main-letter-spacing: 7%;
     --banner-sub-letter-spacing: 28%;
     --banner-small-letter-spacing: 7%;
 
     --article-heading-letter-spacing: 16%;
     --article-body-letter-spacing: 1%;
-    
+
     --menu-heading-letter-spacing: 16%;
     --menu-body-letter-spacing: 20%;
 
     --cta-button-letter-spacing: 50%;
-    --contact-info-letter-spacing: 7%;
+    --contact-info-letter-spacing: 7 %;
 }
 
 body {
@@ -94,18 +94,52 @@ header {
 }
 
 .banner-main {
-    font-size: 1.77rem;
+    font-family: audiowide;
     letter-spacing: var(--banner-main-letter-spacing);
     line-height: 1;
     margin: 0;
     padding: 0;
     margin-block-end: 1rem;
+
+    h1 {
+        background-image: url("./src/images/fondobueno.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        // -webkit-background-clip: text;
+        /* WebKit browsers */
+        background-clip: text;
+        /* Standard syntax */
+
+        /* hide the fill so only the background shows through the text */
+        color: transparent;
+        // -webkit-text-fill-color: transparent;
+
+        margin-block-start: 0;
+        line-height: 1.4;
+        font-size: calc(-0.08em + 10vw);
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #word-de {
+        margin-inline-start: auto;
+    }
+
+    #word-y {
+        margin-inline-end: auto;
+    }
+
     p {
         margin: 0;
     }
 
     > p + p {
         margin-block-start: 1rem;
+    }
+
+    .small {
+        font-size: 0.5em;
+        align-self: flex-end;
     }
 }
 
@@ -125,6 +159,7 @@ header {
     font-size: 1rem;
     letter-spacing: var(--banner-small-letter-spacing);
     line-height: 1;
+
     p {
         margin: 0;
     }

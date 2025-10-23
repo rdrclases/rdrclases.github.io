@@ -7,7 +7,8 @@ const headerBackDrop = document.getElementById("header-backdrop");
 const mobileNav = document.getElementById("mobile-nav");
 const mobileNavHeader = document.getElementById("mobile-nav-header");
 const mobileNavBody = document.getElementById("mobile-nav-body");
-const smallLogo = document.getElementById("small-logo");
+const smallLogoDark = document.getElementById("small-logo-dark");
+// const smallLogoLight = document.getElementById("small-logo-light");
 const bannerLogo = document.getElementById("banner-logo");
 
 const allButtons = document.getElementsByTagName("button");
@@ -55,7 +56,7 @@ function toggleMenu() {
     mobileNavBody.classList.toggle("is-open");
     openMenuButton.classList.toggle("is-displayed");
     closeMenuButton.classList.toggle("is-displayed");
-    smallLogo.classList.toggle("is-displayed");
+    smallLogoDark.classList.toggle("is-displayed");
 }
 
 // EVENT LISTENERS
@@ -90,6 +91,7 @@ homeButton.addEventListener('click', () => {
     }
 
     mainHeader.classList.add('extra-padded');
+    // smallLogoLight.classList.remove('is-displayed');
 });
 
 aboutButton.addEventListener('click', () => {
@@ -98,6 +100,7 @@ aboutButton.addEventListener('click', () => {
             article.classList.toggle('is-visible');
         }
     }
+    // smallLogoLight.classList.add('is-displayed');
     about.classList.toggle('is-visible');
     bannerLogo.classList.add('is-hidden');
     mainHeader.classList.remove('extra-padded');
@@ -109,6 +112,7 @@ methodButton.addEventListener('click', () => {
             article.classList.toggle('is-visible');
         }
     }
+    // smallLogoLight.classList.add('is-displayed');
     method.classList.toggle('is-visible');
     bannerLogo.classList.add('is-hidden');
 });
@@ -119,6 +123,7 @@ lessonsButton.addEventListener('click', () => {
             article.classList.toggle('is-visible');
         }
     }
+    // smallLogoLight.classList.add('is-displayed');
     lessons.classList.toggle('is-visible');
     bannerLogo.classList.add('is-hidden');
 });
@@ -129,6 +134,7 @@ pricingButton.addEventListener('click', () => {
             article.classList.toggle('is-visible');
         }
     }
+    // smallLogoLight.classList.add('is-displayed');
     pricing.classList.toggle('is-visible');
     bannerLogo.classList.add('is-hidden');
 });
@@ -139,6 +145,7 @@ contactButton.addEventListener('click', () => {
             article.classList.toggle('is-visible');
         }
     }
+    // smallLogoLight.classList.add('is-displayed');
     contact.classList.toggle('is-visible');
     bannerLogo.classList.add('is-hidden');
     mainHeader.classList.remove('extra-padded');
@@ -154,6 +161,7 @@ for (const ctaContactButton of ctaContactButtons) {
         for (const navButton of navButtons) {
             navButton.classList.remove('is-active');
         }
+        // smallLogoLight.classList.add('is-displayed');
         contactButton.classList.toggle('is-active');
         contact.classList.toggle('is-visible');
         bannerLogo.classList.add('is-hidden');

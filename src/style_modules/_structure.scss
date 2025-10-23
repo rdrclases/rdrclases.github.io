@@ -45,11 +45,20 @@ main > * {
 
 .mobile-nav-header {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
 
-    .small-logo {
+    .small-logo-dark,
+    .small-logo-light {
         height: 1rem;
+    }
+
+    .small-logo-dark{
+        margin-inline-end: auto;
+    }
+
+    .small-logo-light {
+        margin-inline: calc(auto - 1rem);
     }
 }
 

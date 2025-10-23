@@ -23,7 +23,14 @@
     }
 }
 
-.small-logo {
+.small-logo-dark {
+    display: none;
+    &.is-displayed {
+        display: block;
+    }
+}
+
+.small-logo-light {
     display: none;
     &.is-displayed {
         display: block;
