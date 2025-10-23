@@ -53,7 +53,7 @@
     font-size: calc(8px + 3vw);
 
     --banner-main-letter-spacing: 7%;
-    --banner-sub-letter-spacing: 28%;
+    --banner-sub-letter-spacing: calc(2.1vw - 0.04em);
     --banner-small-letter-spacing: 7%;
 
     --article-heading-letter-spacing: 16%;
@@ -100,20 +100,16 @@ header {
     margin: 0;
     padding: 0;
     margin-block-end: 1rem;
+    
+    background-image: url("./src/images/fondobueno.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: text;
+    color: transparent;
 
+    margin-inline: -1rem;
     h1 {
-        background-image: url("./src/images/fondobueno.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        // -webkit-background-clip: text;
-        /* WebKit browsers */
-        background-clip: text;
-        /* Standard syntax */
-
-        /* hide the fill so only the background shows through the text */
-        color: transparent;
-        // -webkit-text-fill-color: transparent;
-
+        margin-inline: 1rem;
         margin-block-start: 0;
         line-height: 1.4;
         font-size: calc(-0.08em + 10vw);
@@ -140,15 +136,20 @@ header {
     .small {
         font-size: 0.5em;
         align-self: flex-end;
+        transform: translateY(-0.4rem);
     }
 }
 
 .banner-sub {
+    display: flex;
+    justify-content: space-between;
+    
     font-size: 1rem;
     letter-spacing: var(--banner-sub-letter-spacing);
     line-height: 1;
     margin-block-start: 0;
     margin-block-end: 3rem;
+    margin-inline: auto;
 }
 
 .banner-small {
