@@ -14,16 +14,29 @@ body {
     }
 }
 
-header,
-main {
+header {
     padding-inline: 1rem;
     overflow: hidden;
 }
 
-header > *,
-main > * {
+main {
+    overflow: hidden;
+}
+
+header > * {
     // width: var(--mobile-width);
-    margin-inline: auto;
+    // margin-inline: 1rem;
+}
+
+.banner > * {
+   padding-inline: 1rem;
+}
+
+.banner {
+    button {
+        margin-top: 1rem;
+        // margin-bottom: 2rem;
+    }
 }
 
 .main-header {
@@ -64,8 +77,7 @@ main > * {
 
 .main-logo {
     background-color: var(--main-light);
-    padding-block-start: 3rem;
-    padding-block-end: 2rem;
+    padding-block: 3rem;
     padding-inline: 1rem;
     
     .text {
@@ -88,11 +100,53 @@ main > * {
 }
 
 main {
-    padding-block: 2rem;
+    // padding-block: 2rem;
+}
+
+.home-section {
+    --light: white;
+    --dark: var(--main-dark);
+
+    color: var(--black);
+    background-color: var(--light);
+
+    padding-block: 3rem;
+    
+    &.dark {
+        color: var(--white);
+        background-color: var(--dark);
+
+        button {
+            color: var(--light);
+            border-color: inherit;
+        }
+    }
+
+    h3 {
+        margin-block: 0;
+        margin-block-end: 2rem;
+    }
+
+    button {
+        color: var(--dark);
+        border-color: var(--dark);
+    }
+
+    .info-separator {
+        margin-block-end: 2rem;
+        
+        button {
+            margin-block-start: 0;
+
+        }
+    }
 }
 
 .article {
-    padding-block-start: 2rem;
+    padding-block-start: 4rem;
+    padding-block-end: 3rem;
+
+    padding-inline: 1rem;
 
     & > h2 {
         // padding-block-start: 1rem;

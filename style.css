@@ -315,7 +315,7 @@ template {
 }
 
 :root {
-  --main-dark: hsl(48, 20%, 20%);
+  --main-dark: hsl(48, 20%, 30%);
   --main-color: hsl(48, 59%, 20%);
   --main-light: hsl(48, 10%, 50%);
   --main-gray: #403e39;
@@ -330,10 +330,11 @@ template {
   --banner-small-letter-spacing: 7%;
   --article-heading-letter-spacing: 16%;
   --article-body-letter-spacing: 1%;
+  --banner-section-heading-letter-spacing: 28%;
   --menu-heading-letter-spacing: 16%;
   --menu-body-letter-spacing: 20%;
   --cta-button-letter-spacing: 50%;
-  --contact-info-letter-spacing: 7 %;
+  --contact-info-letter-spacing: 7%;
 }
 
 body {
@@ -361,6 +362,20 @@ header {
 .banner {
   text-align: center;
   text-transform: uppercase;
+}
+.banner h3 {
+  text-transform: initial;
+  font-family: "alegreya sans sc";
+  font-weight: 400;
+  letter-spacing: var(--banner-section-heading-letter-spacing);
+}
+.banner p {
+  text-transform: initial;
+  letter-spacing: var(--article-body-letter-spacing);
+  font-weight: 300;
+  text-align: justify;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 .banner-main {
@@ -414,18 +429,23 @@ header {
   margin-block-end: 3rem;
   margin-inline: auto;
 }
+.banner-sub :first-child {
+  padding-inline-start: 0.2rem;
+}
 
 .banner-small {
-  margin-block-start: 0;
-  margin-block-end: 3rem;
+  margin-block-end: 2rem;
+}
+.banner-small p {
+  margin-block-start: 1rem;
   font-family: "alegreya sans sc";
-  text-transform: lowercase;
+  text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: var(--banner-small-letter-spacing);
   line-height: 1;
-}
-.banner-small p {
-  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .article-heading {
@@ -494,15 +514,21 @@ body.menu-is-open {
   overflow: hidden;
 }
 
-header,
-main {
+header {
   padding-inline: 1rem;
   overflow: hidden;
 }
 
-header > *,
-main > * {
-  margin-inline: auto;
+main {
+  overflow: hidden;
+}
+
+.banner > * {
+  padding-inline: 1rem;
+}
+
+.banner button {
+  margin-top: 1rem;
 }
 
 .main-header {
@@ -534,8 +560,7 @@ main > * {
 
 .main-logo {
   background-color: var(--main-light);
-  padding-block-start: 3rem;
-  padding-block-end: 2rem;
+  padding-block: 3rem;
   padding-inline: 1rem;
 }
 .main-logo .text {
@@ -554,12 +579,40 @@ main > * {
   display: none;
 }
 
-main {
-  padding-block: 2rem;
+.home-section {
+  --light: white;
+  --dark: var(--main-dark);
+  color: var(--black);
+  background-color: var(--light);
+  padding-block: 3rem;
+}
+.home-section.dark {
+  color: var(--white);
+  background-color: var(--dark);
+}
+.home-section.dark button {
+  color: var(--light);
+  border-color: inherit;
+}
+.home-section h3 {
+  margin-block: 0;
+  margin-block-end: 2rem;
+}
+.home-section button {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+.home-section .info-separator {
+  margin-block-end: 2rem;
+}
+.home-section .info-separator button {
+  margin-block-start: 0;
 }
 
 .article {
-  padding-block-start: 2rem;
+  padding-block-start: 4rem;
+  padding-block-end: 3rem;
+  padding-inline: 1rem;
 }
 .article > * {
   padding-block-end: 1rem;
@@ -686,6 +739,17 @@ button {
   text-indent: 0;
   font-size: 3rem;
   font-weight: 200;
+}
+
+.cta {
+  width: 100%;
+  padding-block: 1rem;
+  border: 4px solid var(--main-color);
+  color: var(--main-color);
+  font-size: 1rem;
+  letter-spacing: var(--cta-button-letter-spacing);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .cta-contact-button {

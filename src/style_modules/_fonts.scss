@@ -58,12 +58,13 @@
 
     --article-heading-letter-spacing: 16%;
     --article-body-letter-spacing: 1%;
+    --banner-section-heading-letter-spacing: 28%;
 
     --menu-heading-letter-spacing: 16%;
     --menu-body-letter-spacing: 20%;
 
     --cta-button-letter-spacing: 50%;
-    --contact-info-letter-spacing: 7 %;
+    --contact-info-letter-spacing: 7%;
 }
 
 body {
@@ -91,6 +92,22 @@ header {
 .banner {
     text-align: center;
     text-transform: uppercase;
+    
+    h3 {
+        text-transform: initial;
+        font-family: 'alegreya sans sc';
+        font-weight: 400;
+        letter-spacing: var(--banner-section-heading-letter-spacing);
+    }
+
+    p {
+        text-transform: initial;
+        letter-spacing: var(--article-body-letter-spacing);
+        font-weight: 300;
+        text-align: justify;
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
 }
 
 .banner-main {
@@ -150,19 +167,26 @@ header {
     margin-block-start: 0;
     margin-block-end: 3rem;
     margin-inline: auto;
+
+    :first-child {
+        padding-inline-start: 0.2rem;
+    }
 }
 
 .banner-small {
-    margin-block-start: 0;
-    margin-block-end: 3rem;
-    font-family: "alegreya sans sc";
-    text-transform: lowercase;
-    font-size: 1rem;
-    letter-spacing: var(--banner-small-letter-spacing);
-    line-height: 1;
-
+    margin-block-end: 2rem;
+    
     p {
-        margin: 0;
+        // margin: 0;
+        margin-block-start: 1rem;
+        font-family: "alegreya sans sc";
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: var(--banner-small-letter-spacing);
+        line-height: 1;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
     }
 }
 
