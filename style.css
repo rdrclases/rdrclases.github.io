@@ -528,6 +528,7 @@ body.menu-is-open {
 header {
   padding-inline: 1rem;
   overflow: hidden;
+  z-index: 400;
 }
 
 main {
