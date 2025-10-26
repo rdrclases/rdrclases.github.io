@@ -52,19 +52,19 @@
 :root {
     font-size: calc(8px + 3vw);
 
-    --banner-main-letter-spacing: 7%;
+    --banner-main-letter-spacing: calc(2vw - 0.23rem);
     --banner-sub-letter-spacing: calc(2.1vw - 0.04em);
-    --banner-small-letter-spacing: 7%;
+    --banner-small-letter-spacing: 0.07em;
 
-    --article-heading-letter-spacing: 16%;
-    --article-body-letter-spacing: 1%;
-    --banner-section-heading-letter-spacing: 28%;
+    --article-heading-letter-spacing: 0.16em;
+    --article-body-letter-spacing: 0.01em;
+    --banner-section-heading-letter-spacing: 0.28em;
 
-    --menu-heading-letter-spacing: 16%;
-    --menu-body-letter-spacing: 20%;
+    --menu-heading-letter-spacing: 0.16em;
+    --menu-body-letter-spacing: 0.20em;
 
-    --cta-button-letter-spacing: 50%;
-    --contact-info-letter-spacing: 7%;
+    --cta-button-letter-spacing: 0.50em;
+    --contact-info-letter-spacing: 0.07em;
 }
 
 body {
@@ -92,7 +92,7 @@ header {
 .banner {
     text-align: center;
     text-transform: uppercase;
-    
+
     h3 {
         text-transform: initial;
         font-family: 'alegreya sans sc';
@@ -117,21 +117,29 @@ header {
     margin: 0;
     padding: 0;
     margin-block-end: 1rem;
-    
-    background-image: url("./src/images/fondobueno.jpg");
+
+    background-image: url("./src/images/galaxia.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-clip: text;
     color: transparent;
 
     margin-inline: -1rem;
+
     h1 {
+        background-image: inherit;
+        background-size: inherit;
+        background-repeat: inherit;
+        background-clip: inherit;
+        color: inherit;
+
         margin-inline: 1rem;
         margin-block-start: 0;
         line-height: 1.4;
         font-size: calc(-0.08em + 10vw);
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     #word-de {
@@ -151,6 +159,12 @@ header {
     }
 
     .small {
+        background-image: inherit;
+        background-size: inherit;
+        background-repeat: inherit;
+        background-clip: inherit;
+        color: inherit;
+
         font-size: 0.5em;
         align-self: flex-end;
         transform: translateY(-0.4rem);
@@ -160,7 +174,7 @@ header {
 .banner-sub {
     display: flex;
     justify-content: space-between;
-    
+
     font-size: 1rem;
     letter-spacing: var(--banner-sub-letter-spacing);
     line-height: 1;
@@ -175,7 +189,7 @@ header {
 
 .banner-small {
     margin-block-end: 2rem;
-    
+
     p {
         // margin: 0;
         margin-block-start: 1rem;
