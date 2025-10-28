@@ -50,6 +50,10 @@
     // BUTTONS by ClassName
     // CTA CONTACT BUTTONS
     const ctaContactButtons = document.getElementsByClassName("cta-contact-button");
+    const ctaAboutButtons = document.getElementsByClassName("cta-about-button");
+    const ctaMethodButtons = document.getElementsByClassName("cta-method-button");
+    const ctaLessonsButtons = document.getElementsByClassName("cta-lessons-button");
+    const ctaPricingButtons = document.getElementsByClassName("cta-pricing-button");
 
     // FUNCTIONS
     function toggleMenu() {
@@ -60,6 +64,77 @@
         openMenuButton.classList.toggle("is-displayed");
         closeMenuButton.classList.toggle("is-displayed");
         smallLogoDark.classList.toggle("is-displayed");
+    }
+
+    function gotoHome() {
+        for (const article of articles) {
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
+        }
+        home.classList.toggle('is-visible');
+
+        if (bannerLogo.classList.contains('is-hidden')) {
+            bannerLogo.classList.toggle('is-hidden');
+        }
+
+        mainHeader.classList.add('extra-padded');
+        // smallLogoLight.classList.remove('is-displayed');
+    }
+
+    function gotoAbout() {
+        for (const article of articles) {
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
+        }
+        // smallLogoLight.classList.add('is-displayed');
+        about.classList.toggle('is-visible');
+        bannerLogo.classList.add('is-hidden');
+    }
+
+    function gotoMethod() {
+        for (const article of articles) {
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
+        }
+        // smallLogoLight.classList.add('is-displayed');
+        method.classList.toggle('is-visible');
+        bannerLogo.classList.add('is-hidden');
+    }
+
+    function gotoLessons() {
+        for (const article of articles) {
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
+        }
+        // smallLogoLight.classList.add('is-displayed');
+        lessons.classList.toggle('is-visible');
+        bannerLogo.classList.add('is-hidden');
+    }
+
+    function gotoPricing() {
+        for (const article of articles) {
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
+        }
+        // smallLogoLight.classList.add('is-displayed');
+        pricing.classList.toggle('is-visible');
+        bannerLogo.classList.add('is-hidden');
+    }
+
+    function gotoContact() {
+        for (const article of articles) {
+            if (article.classList.contains('is-visible')) {
+                article.classList.toggle('is-visible');
+            }
+        }
+        // smallLogoLight.classList.add('is-displayed');
+        contact.classList.toggle('is-visible');
+        bannerLogo.classList.add('is-hidden');
     }
 
     // EVENT LISTENERS
@@ -81,95 +156,36 @@
         });
     }
 
-    homeButton.addEventListener('click', () => {
-        for (const article of articles) {
-            if (article.classList.contains('is-visible')) {
-                article.classList.toggle('is-visible');
-            }
-        }
-        home.classList.toggle('is-visible');
+    homeButton.addEventListener('click', gotoHome);
 
-        if (bannerLogo.classList.contains('is-hidden')) {
-            bannerLogo.classList.toggle('is-hidden');
-        }
+    aboutButton.addEventListener('click', gotoAbout);
 
-        mainHeader.classList.add('extra-padded');
-        // smallLogoLight.classList.remove('is-displayed');
-    });
+    methodButton.addEventListener('click', gotoMethod);
 
-    aboutButton.addEventListener('click', () => {
-        for (const article of articles) {
-            if (article.classList.contains('is-visible')) {
-                article.classList.toggle('is-visible');
-            }
-        }
-        // smallLogoLight.classList.add('is-displayed');
-        about.classList.toggle('is-visible');
-        bannerLogo.classList.add('is-hidden');
-        mainHeader.classList.remove('extra-padded');
-    });
+    lessonsButton.addEventListener('click', gotoLessons);
 
-    methodButton.addEventListener('click', () => {
-        for (const article of articles) {
-            if (article.classList.contains('is-visible')) {
-                article.classList.toggle('is-visible');
-            }
-        }
-        // smallLogoLight.classList.add('is-displayed');
-        method.classList.toggle('is-visible');
-        bannerLogo.classList.add('is-hidden');
-    });
+    pricingButton.addEventListener('click', gotoPricing);
 
-    lessonsButton.addEventListener('click', () => {
-        for (const article of articles) {
-            if (article.classList.contains('is-visible')) {
-                article.classList.toggle('is-visible');
-            }
-        }
-        // smallLogoLight.classList.add('is-displayed');
-        lessons.classList.toggle('is-visible');
-        bannerLogo.classList.add('is-hidden');
-    });
+    contactButton.addEventListener('click', gotoContact);
 
-    pricingButton.addEventListener('click', () => {
-        for (const article of articles) {
-            if (article.classList.contains('is-visible')) {
-                article.classList.toggle('is-visible');
-            }
-        }
-        // smallLogoLight.classList.add('is-displayed');
-        pricing.classList.toggle('is-visible');
-        bannerLogo.classList.add('is-hidden');
-    });
+    for (const ctaAboutButton of ctaAboutButtons) {
+        ctaAboutButton.addEventListener('click', gotoAbout);
+    }
 
-    contactButton.addEventListener('click', () => {
-        for (const article of articles) {
-            if (article.classList.contains('is-visible')) {
-                article.classList.toggle('is-visible');
-            }
-        }
-        // smallLogoLight.classList.add('is-displayed');
-        contact.classList.toggle('is-visible');
-        bannerLogo.classList.add('is-hidden');
-        mainHeader.classList.remove('extra-padded');
-    });
+    for (const ctaMethodButton of ctaMethodButtons) {
+        ctaMethodButton.addEventListener('click', gotoMethod);
+    }
+
+    for (const ctaLessonsButton of ctaLessonsButtons) {
+        ctaLessonsButton.addEventListener('click', gotoLessons);
+    }
+
+    for (const ctaPricingButton of ctaPricingButtons) {
+        ctaPricingButton.addEventListener('click', gotoPricing);
+    }
 
     for (const ctaContactButton of ctaContactButtons) {
-        ctaContactButton.addEventListener('click', () => {
-            for (const article of articles) {
-                if (article.classList.contains('is-visible')) {
-                    article.classList.toggle('is-visible');
-                }
-            }
-            for (const navButton of navButtons) {
-                navButton.classList.remove('is-active');
-            }
-            // smallLogoLight.classList.add('is-displayed');
-            contactButton.classList.toggle('is-active');
-            contact.classList.toggle('is-visible');
-            bannerLogo.classList.add('is-hidden');
-            mainHeader.classList.remove('extra-padded');
-        });
+        ctaContactButton.addEventListener('click', gotoContact);
     }
 
     for (const button of allButtons) {
