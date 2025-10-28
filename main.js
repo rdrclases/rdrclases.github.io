@@ -66,6 +66,18 @@
         smallLogoDark.classList.toggle("is-displayed");
     }
 
+    function deactivateMenuButtons() {
+        for (const button of navButtons) {
+            if (button.classList.contains('is-active')) {
+                button.classList.toggle('is-active');
+            }
+        }
+    }
+
+    function activateMenuButton(button) {
+        button.classList.toggle("is-active");
+    }
+
     function gotoHome() {
         for (const article of articles) {
             if (article.classList.contains('is-visible')) {
@@ -78,7 +90,6 @@
             bannerLogo.classList.toggle('is-hidden');
         }
 
-        mainHeader.classList.add('extra-padded');
         // smallLogoLight.classList.remove('is-displayed');
     }
 
@@ -144,15 +155,11 @@
     mobileNavBody.addEventListener('click', toggleMenu);
     closeMenuButton.addEventListener('click', toggleMenu);
 
-    // highlighting the buttons texts when clicked (deselecting any previously selected)
+    // highlights the menu button's texts when clicked (deselecting any previously selected)
     for (const button of navButtons) {
         button.addEventListener('click', (event) => {
-            for (const button of navButtons) {
-                if (button.classList.contains('is-active')) {
-                    button.classList.toggle('is-active');
-                }
-            }
-            event.target.classList.toggle('is-active');
+            deactivateMenuButtons();
+            activateMenuButton(event.target);
         });
     }
 
@@ -168,27 +175,48 @@
 
     contactButton.addEventListener('click', gotoContact);
 
+
     for (const ctaAboutButton of ctaAboutButtons) {
-        ctaAboutButton.addEventListener('click', gotoAbout);
+        ctaAboutButton.addEventListener('click', () => {
+            gotoAbout();
+            deactivateMenuButtons();
+            activateMenuButton(aboutButton);
+        });
     }
 
     for (const ctaMethodButton of ctaMethodButtons) {
-        ctaMethodButton.addEventListener('click', gotoMethod);
+        ctaMethodButton.addEventListener('click', () => {
+            gotoMethod();
+            deactivateMenuButtons();
+            activateMenuButton(methodButton);
+        });
     }
 
     for (const ctaLessonsButton of ctaLessonsButtons) {
-        ctaLessonsButton.addEventListener('click', gotoLessons);
+        ctaLessonsButton.addEventListener('click', () => {
+            gotoLessons();
+            deactivateMenuButtons();
+            activateMenuButton(lessonsButton);
+        });
     }
 
     for (const ctaPricingButton of ctaPricingButtons) {
-        ctaPricingButton.addEventListener('click', gotoPricing);
+        ctaPricingButton.addEventListener('click', () => {
+            gotoPricing();
+            deactivateMenuButtons();
+            activateMenuButton(pricingButton);
+        });
     }
 
     for (const ctaContactButton of ctaContactButtons) {
-        ctaContactButton.addEventListener('click', gotoContact);
+        ctaContactButton.addEventListener('click', () => {
+            gotoContact();
+            deactivateMenuButtons();
+            activateMenuButton(contactButton);
+        });
     }
 
-    // When a button is clicked, the page is scrolled back to the top
+    // When any menu button or cta button is clicked, the page is scrolled back to the top
     for (const button of allButtons) {
         if (!button.classList.contains('open-menu-button') && !button.classList.contains('close-menu-button')) {
             button.addEventListener('click', () => {
