@@ -188,6 +188,7 @@
         ctaContactButton.addEventListener('click', gotoContact);
     }
 
+    // When a button is clicked, the page is scrolled back to the top
     for (const button of allButtons) {
         if (!button.classList.contains('open-menu-button') && !button.classList.contains('close-menu-button')) {
             button.addEventListener('click', () => {
@@ -200,14 +201,6 @@
         const value = 'rdrclases@gmail.com';
         navigator.clipboard.writeText(value)
             .then(() => {
-                // const successMessage = 'Email copiado';
-                // const alert = document.createElement('div');
-                // alert.classList.add('alert-container');
-                // alert.innerHTML = `<span class="alert-message success">${successMessage}</span>`;
-                // alert.style.opacity = '0';
-                // alert.style.transition = 'opacity 0.8s ease-in';
-                // body.appendChild(alert);
-                // requestAnimationFrame(() => alert.classList.add('visible'));
                 const successMessage = 'Email copiado';
                 const alert = document.createElement('div');
                 alert.classList.add('alert-container');
