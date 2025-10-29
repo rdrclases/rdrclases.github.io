@@ -30,7 +30,7 @@ header > * {
 }
 
 .banner > * {
-   padding-inline: 1rem;
+    padding-inline: 1rem;
 }
 
 .banner {
@@ -67,7 +67,7 @@ header > * {
         height: 1rem;
     }
 
-    .small-logo-dark{
+    .small-logo-dark {
         margin-inline-end: auto;
     }
 
@@ -80,7 +80,7 @@ header > * {
     background-color: var(--main-light);
     padding-block: 3rem;
     padding-inline: 1rem;
-    
+
     .text {
         display: inline-block;
         width: 1rem;
@@ -88,7 +88,7 @@ header > * {
         text-indent: 100rem;
         overflow: hidden;
     }
-    
+
     .image {
         display: block;
         margin-inline: auto;
@@ -112,7 +112,7 @@ main {
     background-color: var(--light);
 
     padding-block: 3rem;
-    
+
     &.dark {
         color: var(--white);
         background-color: var(--dark);
@@ -139,7 +139,7 @@ main {
 
     .info-separator {
         margin-block-end: 2rem;
-        
+
         button {
             margin-block-start: 0;
 
@@ -153,17 +153,20 @@ main {
 
     padding-inline: 1rem;
 
-    & > h2 {
-        // padding-block-start: 1rem;
-    }
-
     & > * {
         padding-block-end: 1rem;
     }
 
+    & > h2 {
+        padding-block-end: 0;
+    }
+
     picture {
-        width: 100%;
-        height: 100%;
+        display: block;
+        margin-inline: auto;
+        margin-block-start: 1rem;
+        padding-block-end: 0;
+        width: 50%;
     }
 
     picture img {
@@ -275,9 +278,10 @@ article {
 }
 
 .alert-container {
-  opacity: 0;
-  transition: opacity 0.4s ease-in;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
 }
+
 .alert-container.visible {
-  opacity: 1;
+    opacity: 1;
 }
