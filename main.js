@@ -11,7 +11,7 @@
     const mobileNavHeader = document.getElementById("mobile-nav-header");
     const mobileNavBody = document.getElementById("mobile-nav-body");
     const smallLogoDark = document.getElementById("small-logo-dark");
-    // const smallLogoLight = document.getElementById("small-logo-light");
+    const smallLogoLight = document.getElementById("small-logo-light");
     const bannerLogo = document.getElementById("banner-logo");
 
     const allButtons = document.getElementsByTagName("button");
@@ -90,7 +90,7 @@
             bannerLogo.classList.toggle('is-hidden');
         }
 
-        // smallLogoLight.classList.remove('is-displayed');
+        smallLogoLight.classList.remove('is-displayed');
     }
 
     function gotoAbout() {
@@ -102,6 +102,7 @@
         // smallLogoLight.classList.add('is-displayed');
         about.classList.toggle('is-visible');
         bannerLogo.classList.add('is-hidden');
+        smallLogoLight.classList.add('is-displayed');
     }
 
     function gotoMethod() {
@@ -113,6 +114,7 @@
         // smallLogoLight.classList.add('is-displayed');
         method.classList.toggle('is-visible');
         bannerLogo.classList.add('is-hidden');
+        smallLogoLight.classList.add('is-displayed');
     }
 
     function gotoLessons() {
@@ -124,6 +126,7 @@
         // smallLogoLight.classList.add('is-displayed');
         lessons.classList.toggle('is-visible');
         bannerLogo.classList.add('is-hidden');
+        smallLogoLight.classList.add('is-displayed');
     }
 
     function gotoPricing() {
@@ -135,6 +138,7 @@
         // smallLogoLight.classList.add('is-displayed');
         pricing.classList.toggle('is-visible');
         bannerLogo.classList.add('is-hidden');
+        smallLogoLight.classList.add('is-displayed');
     }
 
     function gotoContact() {
@@ -146,6 +150,7 @@
         // smallLogoLight.classList.add('is-displayed');
         contact.classList.toggle('is-visible');
         bannerLogo.classList.add('is-hidden');
+        smallLogoLight.classList.add('is-displayed');
     }
 
     // EVENT LISTENERS
@@ -261,5 +266,23 @@
     openTelegramButton.addEventListener('click', () => {
         window.open('https://t.me/rdrclases', '_blank');
     });
+
+
+    // Makes the small white logo toggle when the banner logo goes in and out of view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                smallLogoLight.classList.remove('is-displayed');
+            } else {
+                smallLogoLight.classList.add('is-displayed');
+            }
+        });
+    }, {
+        root: null,
+        // this value is calculated as the ratio of the height of the element in and its bottom padding
+        threshold: 0.267
+    });
+
+    observer.observe(bannerLogo);
 
 })();

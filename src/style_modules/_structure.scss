@@ -61,6 +61,7 @@ header > * {
     display: flex;
     // justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .small-logo-dark,
     .small-logo-light {
@@ -72,7 +73,8 @@ header > * {
     }
 
     .small-logo-light {
-        margin-inline: calc(auto - 1rem);
+        position: absolute;
+        inset-inline-start: calc(50vw - 1rem - 0.87rem);
     }
 }
 

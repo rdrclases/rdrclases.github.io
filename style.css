@@ -559,6 +559,7 @@ main {
 .mobile-nav-header {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .mobile-nav-header .small-logo-dark,
 .mobile-nav-header .small-logo-light {
@@ -568,7 +569,8 @@ main {
   margin-inline-end: auto;
 }
 .mobile-nav-header .small-logo-light {
-  margin-inline: calc(auto - 1rem);
+  position: absolute;
+  inset-inline-start: calc(50vw - 1rem - 0.87rem);
 }
 
 .main-logo {
