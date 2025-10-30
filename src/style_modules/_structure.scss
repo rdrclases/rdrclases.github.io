@@ -59,9 +59,8 @@ header > * {
 
 .mobile-nav-header {
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
 
     .small-logo-dark,
     .small-logo-light {
@@ -73,8 +72,10 @@ header > * {
     }
 
     .small-logo-light {
-        position: absolute;
-        inset-inline-start: calc(50vw - 1rem - 0.87rem);
+        // (100vw - 2rem) / 2 = 50vw - 1rem -> this is the center of the screen
+        // 0.87rem is half the length of the RDR small logo
+        // it calculates the distance to the center and subtracts half the logo's length for it's perfect centering
+        margin-inline-end: calc(50vw - 1rem - 0.87rem);
     }
 }
 
@@ -237,10 +238,6 @@ article {
     padding-inline: 1em;
 
     margin-block-end: 1rem;
-
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: var(--contact-info-letter-spacing);
 }
 
 .info-card-icon {
@@ -262,28 +259,21 @@ article {
 
     position: fixed;
     inset: 0;
+
     background-color: var(--main-gray);
     color: var(--white);
-    opacity: 0.9;
+
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+
+    &.visible {
+        opacity: 1;
+    }
 
     .alert-message {
         display: block;
         width: 100%;
         background-color: var(--main-color);
         padding: 1rem;
-        text-align: center;
-        font-size: 1rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 8%;
     }
-}
-
-.alert-container {
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
-}
-
-.alert-container.visible {
-    opacity: 1;
 }
