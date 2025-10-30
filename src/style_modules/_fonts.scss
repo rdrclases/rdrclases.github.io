@@ -58,6 +58,7 @@
 
     --article-heading-letter-spacing: 0.28em;
     --article-body-letter-spacing: 0.01em;
+    --article-section-letter-spacing: 0.28em;
     --banner-section-heading-letter-spacing: 0.28em;
 
     --menu-heading-letter-spacing: 0.16em;
@@ -223,6 +224,25 @@ header {
     line-height: 1.4;
     text-align: justify;
     font-weight: 400;
+}
+
+.article-section {
+    text-align: center;
+    letter-spacing: var(--article-section-letter-spacing);
+    margin-inline-end: calc(-1 * var(--article-section-letter-spacing));
+
+    h3 {
+        text-transform: uppercase;
+        // letter-spacing: var(--article-section-letter-spacing);
+        // margin-inline-end: calc(-1 * var(--article-section-letter-spacing));
+    }
+    
+    h4 {
+        font-weight: 500;
+        font-size: 1.2em;
+        font-family: "alegreya sans sc";
+        text-transform: lowercase;
+    }
 }
 
 .menu-heading {
